@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Sign</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            Username:<h:inputText id="User" required="true" requiredMessage="please enter your username" value="#{Sign.username}"/><br/>
+            Password:<h:inputText id="Pass" required="true" requiredMessage="please enter your password" value="#{Sign.password}"/><br/>
+            Name    :<h:inputText id="Name" required="true" requiredMessage="please enter your name" value="#{Sign.name}"/><br/>
+            Surname :<h:inputText id="Surname" required="true" requiredMessage="please enter your surname" value="#{Sign.surname}"/><br/>
+            E-mail  :<h:inputText validatorMessage="Please enter your E-mail correctly!" id="Email" required="true" requiredMessage="please enter your E-mail" value="#{Sign.email}">
+                <f:validateRegex pattern="[\w\.-]*[a-zA-Z0-9_]@[\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]"/>
+            </h:inputText><br/>
+            <h:selectOneMenu id="Sex" value="#{Sign.sex}"><br/>
+                <f:selectItem id="male" itemLabel="Male" itemValue="M"/>
+                <f:selectItem id="female" itemLabel="Female" itemValue="F"/>
+            </h:selectOneMenu><br/><br/>
+            <h:commandButton value="Reset"  type="reset"/>
+            <h:commandButton value="Back" action="index"/><br/><br/><br/>
+            <h:commandButton value="Sign up" action="#{Sign.sign_up()}"  onclick="alert('Your account has been created successfully');"/>
+        </h:form>
+    </h:body>
+</html>
+

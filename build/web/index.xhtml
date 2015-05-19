@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Otomasyon Ana Sayfa</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <ul>
+                <li>
+                    Kullanıcı Adı:<h:inputText id="user" required="true" requiredMessage="Kullanıcı Adi giriniz" value="#{Uyeol.girilen_ad}"/>
+                </li>
+                <li>
+                    Sifre:<h:inputSecret id="pass" required="true" requiredMessage="Sifre giriniz" value="#{Uyeol.girilen_sifre}"/>
+                </li>
+            <h:selectOneMenu id="Login" value="#{Uyeol.admin}">
+                <f:selectItem id="admin" itemLabel="Admin" itemValue="Admin"/>
+                <f:selectItem id="user1" itemLabel="User" itemValue="User"/>
+            </h:selectOneMenu>
+            </ul>
+            
+            <h:commandButton value="Login" action="#{Uyeol.login()}">
+                <f:setPropertyActionListener target="#{Uyeol.bilinmeyen}" value="#{Uyeol.girilen_ad}"/>
+            </h:commandButton>
+            
+        </h:form><br/><br/>
+        <h:outputLink value="faces/sign.xhtml">Sign up</h:outputLink>
+
+    </h:body>
+</html>
+
