@@ -14,7 +14,7 @@ import javax.sql.DataSource;
 
 @ManagedBean ( name = "Sign" )
 @RequestScoped
-public class Kayit {
+public class Sign {
     private String girilen_ad,girilen_sifre,admin,user,bilinmeyen,username,name,surname,password,sex,email;
     Connection con;
     DataSource dataSource;
@@ -107,21 +107,21 @@ public class Kayit {
         this.girilen_sifre = girilen_sifre;
     }
 
-    public Kayit() throws SQLException, NamingException{
+    public Sign() throws SQLException, NamingException{
         String url="jdbc:derby://localhost/cdkitap";
-         String user = "admin";
+        String user = "admin";
         String password = "password";
         try{
             con = DriverManager.getConnection(url,user,password);
             Context ctx = new InitialContext();
             dataSource = (DataSource)ctx.lookup("jdbc/cdkitap");
-        } catch (SQLException e )
+        } catch (NamingException e )
         {
             e.printStackTrace();
         }
     }
         
-    public void Kayit() throws SQLException
+    public void Sign() throws SQLException
     {
         if ( dataSource == null )
             throw new SQLException ( "Unable to obtain DataSource" );
@@ -157,7 +157,7 @@ public class Kayit {
  
             PreparedStatement addEntry =
             connection.prepareStatement( "INSERT INTO USERS " +
-            "(USER_NAME,USER_PASS,name,surname,email,sex)" +
+            "(USER_NAME,USER_PASS,NAME,SURNAME,EMAIL,SEX)" +
             "VALUES ( ?, ?, ?, ?, ?, ?)" );
 
             addEntry.setString( 1, getUsername());
