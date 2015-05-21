@@ -3,9 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/SemihFatih/Documents/NetBeansProjects/CdKiralamaOtomasyonu/src/java/Sign.java</file>
+            <file>file:/C:/Users/SemihFatih/Documents/NetBeansProjects/CdKiralamaOtomasyonu/web/show_books.xhtml</file>
+            <file>file:/C:/Users/SemihFatih/Documents/NetBeansProjects/CdKiralamaOtomasyonu/web/add_book.xhtml</file>
+            <file>file:/C:/Users/SemihFatih/Documents/NetBeansProjects/CdKiralamaOtomasyonu/src/java/root/Customer.java</file>
             <file>file:/C:/Users/SemihFatih/Documents/NetBeansProjects/CdKiralamaOtomasyonu/web/sign.xhtml</file>
             <file>file:/C:/Users/SemihFatih/Documents/NetBeansProjects/CdKiralamaOtomasyonu/web/index.xhtml</file>
+            <file>file:/C:/Users/SemihFatih/Documents/NetBeansProjects/CdKiralamaOtomasyonu/web/add_cd.xhtml</file>
+            <file>file:/C:/Users/SemihFatih/Documents/NetBeansProjects/CdKiralamaOtomasyonu/web/admin_page.xhtml</file>
+            <file>file:/C:/Users/SemihFatih/Documents/NetBeansProjects/CdKiralamaOtomasyonu/src/java/root/Sign.java</file>
+            <file>file:/C:/Users/SemihFatih/Documents/NetBeansProjects/CdKiralamaOtomasyonu/src/java/root/CustomerBean.java</file>
+            <file>file:/C:/Users/SemihFatih/Documents/NetBeansProjects/CdKiralamaOtomasyonu/src/java/root/book_info.java</file>
         </group>
     </open-files>
 </project-private>
