@@ -1,5 +1,9 @@
 # CdKiralamaOtomasyonu
-Cd kitap kiralama sistemi V 0.6
+Cd kitap kiralama sistemi V 0.6.1
+
+Eklenenler
+
+add_book, add_cd, admin_page
 
 Fonksiyonlar
 
@@ -14,3 +18,5 @@ Fonksiyonlar
 *Kiralama tarihleri
 
 *Kira bitiş tarihleri
+
+
