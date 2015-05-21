@@ -149,7 +149,7 @@ public class Sign {
         Connection connection = dataSource.getConnection();
 
  
-        if ( con == null )
+        if ( connection == null )
             throw new SQLException( "Unable to connect to DataSource" );
 
         try
@@ -183,7 +183,7 @@ public class Sign {
         {
             if(girilen_ad.equals(res.getString("ADMIN_NAME")) && girilen_sifre.equals(res.getString("ADMIN_PASS")) && admin.equals("Admin"))
             {
-                return "add.xhtml";
+                return "admin_page.xhtml";
             }
             else if(girilen_ad.equals(res.getString("USER_NAME")) && girilen_sifre.equals(res.getString("USER_PASS")) && admin.equals("User"))
             {

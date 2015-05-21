@@ -10,19 +10,19 @@
         <h:form>
             <ul>
                 <li>
-                    Kullanıcı Adı:<h:inputText id="user" required="true" requiredMessage="Kullanıcı Adi giriniz" value="#{Uyeol.girilen_ad}"/>
+                    Kullanıcı Adı:<h:inputText id="user" required="true" requiredMessage="Kullanıcı Adi giriniz" value="#{Sign.girilen_ad}"/>
                 </li>
                 <li>
-                    Sifre:<h:inputSecret id="pass" required="true" requiredMessage="Sifre giriniz" value="#{Uyeol.girilen_sifre}"/>
+                    Sifre:<h:inputSecret id="pass" required="true" requiredMessage="Sifre giriniz" value="#{Sign.girilen_sifre}"/>
                 </li>
-            <h:selectOneMenu id="Login" value="#{Uyeol.admin}">
+            <h:selectOneMenu id="Login" value="#{Sign.admin}">
                 <f:selectItem id="admin" itemLabel="Admin" itemValue="Admin"/>
                 <f:selectItem id="user1" itemLabel="User" itemValue="User"/>
             </h:selectOneMenu>
             </ul>
             
-            <h:commandButton value="Login" action="#{Uyeol.login()}">
-                <f:setPropertyActionListener target="#{Uyeol.bilinmeyen}" value="#{Uyeol.girilen_ad}"/>
+            <h:commandButton value="Login" action="#{Sign.login()}">
+                <f:setPropertyActionListener target="#{Sign.bilinmeyen}" value="#{Sign.girilen_ad}"/>
             </h:commandButton>
             
         </h:form><br/><br/>

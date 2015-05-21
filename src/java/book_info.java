@@ -1,6 +1,7 @@
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
@@ -15,7 +16,7 @@ import javax.sql.rowset.CachedRowSet;
 public class book_info {
     private String isbn,book_name,author,year_pub,publisher,pages,number;
     private String cd_isbn,cd_name,artist,cd_year_pub,cd_publisher,cd_number;
-    
+    private String searching_name,searching_author;
     CachedRowSet rowSet=null;
     
     DataSource dataSource;
@@ -26,6 +27,22 @@ public class book_info {
         }catch(NamingException e){
             e.printStackTrace();
         }
+    }
+
+    public void setSearching_name(String searching_name) {
+        this.searching_name = searching_name;
+    }
+
+    public String getSearching_name() {
+        return searching_name;
+    }
+
+    public void setSearching_author(String searching_author) {
+        this.searching_author = searching_author;
+    }
+
+    public String getSearching_author() {
+        return searching_author;
     }
 
     public void setCd_isbn(String cd_isbn) {
@@ -201,5 +218,64 @@ public class book_info {
                 connection.close(); 
             } 
     } 
+    
+     public ResultSet search() throws SQLException
+    {
+    // check whether dataSource was injected by the server
+        if ( dataSource == null )
+            throw new SQLException( "Unable to obtain DataSource" );
+
+    // obtain a connection from the connection pool
+        Connection connection = dataSource.getConnection();
+
+        // check whether connection was successful
+        if ( connection == null )
+            throw new SQLException( "Unable to connect to DataSource" );
+
+        try
+        {
+        // create a PreparedStatement to insert a new address book entry
+            PreparedStatement ps =
+            connection.prepareStatement( "select ISBN,BOOK_NAME ,AUTHOR,YEAR_PUB, PUBLISHER from BOOKS " +
+            "where BOOKS.BOOK_NAME=?" );
+            ps.setString( 1, getSearching_name());
+            rowSet = new com.sun.rowset.CachedRowSetImpl();
+            rowSet.populate( ps.executeQuery() );
+            return rowSet;
+        } // end try
+    finally
+    {
+        connection.close(); // return this connection to pool
+    } // end finally
+}
+     public ResultSet search_author() throws SQLException
+    {
+    // check whether dataSource was injected by the server
+        if ( dataSource == null )
+            throw new SQLException( "Unable to obtain DataSource" );
+
+    // obtain a connection from the connection pool
+        Connection connection = dataSource.getConnection();
+
+        // check whether connection was successful
+        if ( connection == null )
+            throw new SQLException( "Unable to connect to DataSource" );
+
+        try
+        {
+        // create a PreparedStatement to insert a new address book entry
+            PreparedStatement ps =
+            connection.prepareStatement( "select AUTHOR from BOOKS " +
+            "where BOOKS.AUTHOR=?" );
+            ps.setString( 1, getSearching_author());
+            rowSet = new com.sun.rowset.CachedRowSetImpl();
+            rowSet.populate( ps.executeQuery() );
+            return rowSet;
+        } // end try
+    finally
+    {
+        connection.close(); // return this connection to pool
+    } // end finally
+ } 
 }
 
