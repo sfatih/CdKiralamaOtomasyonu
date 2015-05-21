@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Add Book</title>
+    </h:head>
+    <h:body>
+        Hoşgeldiniz  <h:outputText id="kullanici_adi"  style="text-decoration: underline;" value=" #{Sign.bilinmeyen}" />
+
+        
+        <h:form>
+            
+             Book ISBN: <h:inputText id="isbn" required="true" requiredMessage="ISBN giriniz" value="#{BookBean.isbn}" /><br/>
+             Book Name:<h:inputText id="kitapadi" required="true" requiredMessage="Kitap Adı giriniz" value="#{BookBean.book_name}" /><br/>
+             Author:<h:inputText id="yazarid" required="true" requiredMessage="Yazar ID giriniz" value="#{BookBean.author}" /><br/>
+             Year Of Publication:<h:inputText id="basimyili" required="false" requiredMessage="Basım Yılı giriniz" value="#{BookBean.year_pub}" /><br/>
+             Publisher:<h:inputText id="yayinevi" required="false" requiredMessage="Yayınevi giriniz" value="#{BookBean.publisher}" /><br/>
+             Number Of Pages:<h:inputText id="sayfasayisi" required="false" requiredMessage="Sayfa Sayısı giriniz" value="#{BookBean.pages}" /><br/>
+             
+             <h:commandButton class="buton" value="Ekle" action="#{BookBean.insert_book()}"/>
+             <h:commandButton class="buton"  value="Temizle"  type="reset" />
+        </h:form>
+        
+        <h:outputLink style="color:red;" value="index.xhtml"> (Çıkış Yap)</h:outputLink>        
+            
+    </h:body>
+</html>
+

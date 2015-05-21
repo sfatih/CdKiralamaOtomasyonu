@@ -8,11 +8,11 @@
     </h:head>
     <h:body>
         <h:form>
-            Username:<h:inputText id="User" required="true" requiredMessage="please enter your username" value="#{Sign.username}"/><br/>
-            Password:<h:inputText id="Pass" required="true" requiredMessage="please enter your password" value="#{Sign.password}"/><br/>
-            Name    :<h:inputText id="Name" required="true" requiredMessage="please enter your name" value="#{Sign.name}"/><br/>
-            Surname :<h:inputText id="Surname" required="true" requiredMessage="please enter your surname" value="#{Sign.surname}"/><br/>
-            E-mail  :<h:inputText validatorMessage="Please enter your E-mail correctly!" id="Email" required="true" requiredMessage="please enter your E-mail" value="#{Sign.email}">
+            Username:<h:inputText id="User" required="true" requiredMessage="Please enter your username" value="#{Sign.username}"/><br/>
+            Password:<h:inputText id="Pass" required="true" requiredMessage="Please enter your password" value="#{Sign.password}"/><br/>
+            Name    :<h:inputText id="Name" required="true" requiredMessage="Please enter your name" value="#{Sign.name}"/><br/>
+            Surname :<h:inputText id="Surname" required="true" requiredMessage="Please enter your surname" value="#{Sign.surname}"/><br/>
+            E-mail  :<h:inputText validatorMessage="Please enter your E-mail correctly!" id="Email" required="true" requiredMessage="Please enter your E-mail" value="#{Sign.email}">
                 <f:validateRegex pattern="[\w\.-]*[a-zA-Z0-9_]@[\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]"/>
             </h:inputText><br/>
             <h:selectOneMenu id="Sex" value="#{Sign.sex}"><br/>
